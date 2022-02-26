@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<!--
+		Comments like this do not affect the addon. They are only references for
+		people like you who are working on the extension.
+	-->
+	
+	
+	
+	<!-- Description is the same for all extensions. -->
+  <Description about="urn:mozilla:install-manifest">
+    
+	<!-- 
+		Your id will use a format similar to an email address. Make one that is 
+		unique and unlikely to be used by other extension authors. Don't use 
+		your real email address to avoid spam. This id will never be resolved &
+		nothing will be sent to the address.
+	-->
+    <em:id>hello_world@extensions.kmeleonbrowser.org</em:id>
+	
+	<!-- Name is used by the extension manager in about:addons. -->
+    <em:name>Hello World</em:name>
+	
+	<!--
+		This number appears in about:addons. Also, it will determine if a new
+		XPI file is installed over an older version.
+	-->
+    <em:version>1.11112111111</em:version> 
+	
+	<!-- Use 2 for all extensions. -->
+    <em:type>2</em:type>
+	
+	<!-- Optional.-->
+    <em:creator>your_name</em:creator>
+	
+	<!-- Optional. -->
+    <em:contributor>OM</em:contributor>
+	
+    <em:description>
+	This extension is a reference for K-Meleon extensions developers. Open the .xpi file as an archive to see how it works.
+	</em:description>
+	
+    <em:homepageURL>http://kmeleonbrowser.org/wiki/WriteXULExtensions</em:homepageURL>
+	
+	<!-- 
+		Target applications are listed below. Often applications that target
+		Firefox will install on other browsers that use Mozilla code. It's still
+		a good idea to target K-Meleon specifically.
+				id: GUID string for target application, required
+				minVersion: minimum version of K-Meleon, required
+				maxVersion: ignored without strictCompatibility, but required
+				em:strictCompatibility: use maxVersion, optional
+	-->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- firefox -->
+        <em:minVersion>20.0</em:minVersion>
+        <em:maxVersion>39.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <em:targetApplication>
+      <Description>
+        <em:id>{944df56f-c0ec-4d7b-94b6-f625c8cc96ea}</em:id>  <!-- kmeleon -->
+        <em:minVersion>1.0</em:minVersion>
+        <em:maxVersion>90.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <em:bootstrap>true</em:bootstrap>
+  </Description>
+
+<!--
+	Any element above can be put into localization tags for other lanaguages.
+	This only affects the add-on description and not the add-on itself.
+-->  
+	<em:localized>
+		<Description>
+			<!--
+				xx-YY format. xx is ISO 639-1 language. YY is ISO-3166-1993
+				location. K-Meleon will use the localized element if either 
+				xx or YY match the user.
+			-->
+			<em:locale>es-MX</em:locale>
+			<em:name>Hola Mundo!</em:name>
+		</Description>
+	</em:localized>
+  
+  <!--
+	Several optional settings:
+		em:iconURL: 	chrome:// URL for the icon. Use PNG format. Add a "skin 
+						package" line to your chrome.manifest file. Displayed at
+						32 by 32. Default icon used if not specified.
+		em:icon64URL:	64 by 64  icon to display in the add-on's details view.
+						Small icon used if not defined and default icon used if
+						no icons are defined.
+		em:aboutURL: 	chrome:// URL for an about page
+		em:targetPlatform: required operating system
+		em:bootstrap: 	only for bootstrap extensions
+		em:updateKey: 	signature for automatic updates
+		em:updateURL: 	URL for automatic updates
+  
+  -->
+</RDF>
