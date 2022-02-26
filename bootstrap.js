@@ -1,12 +1,18 @@
 //
-// This is restartless add-on.
-// File -> Open -> All Files -> tinyurl@om.xpi
-// You can manage it in about:addons page.
+// XUL-based extensions put their code into js files. The language is javascript
+// Refer to Mozilla's documentation for most of K-Meleon's API.
+// 
 //
-// This add-on creates the button on the toolbar
+// K-Meleon specific features are handled by the jsBridge Kplugin.
+//
+//
+// This extension will create a button on the toolbar
 // Default toolbar: "Browser Con&figuration"
-// Create "extensions.tinyurl@om.toolbar" string preference (in about:config page)
-//  to override default.
+// 
+// Create "hello_world@extensions.kmeleonbrowser.org" string preference (in 
+// about:config page) to override default.
+//
+// Simple KM macros can also change preferences to interact with xpi extensions.
 //
 
 var prefBranch = 'hello_world@extensions.kmeleonbrowser.org.'

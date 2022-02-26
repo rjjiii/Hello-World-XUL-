@@ -26,7 +26,7 @@
 		This number appears in about:addons. Also, it will determine if a new
 		XPI file is installed over an older version.
 	-->
-    <em:version>1.11112111111</em:version> 
+    <em:version>1.2</em:version> 
 	
 	<!-- Use 2 for all extensions. -->
     <em:type>2</em:type>
