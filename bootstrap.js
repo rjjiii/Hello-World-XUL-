@@ -1,26 +1,28 @@
 //
-// XUL-based extensions put their code into js files. The language is javascript
-// Refer to Mozilla's documentation for most of K-Meleon's API.
-// 
+// XUL-based extensions put their code into standard JavaScript files.
+// Refer to Mozilla's documentation for K-Meleon's engine's API.
+// Refer to the K-Meleon wiki for K-Meleon interface APIs.
 //
 // K-Meleon specific features are handled by the jsBridge Kplugin.
 //
 //
-// This extension will create a button on the toolbar
-// Default toolbar: "Browser Con&figuration"
+// This extension will create a button on the toolbar and a menu item.
+// Default toolbar: "Browser Con&figuration" (this is fine for most extensions)
+// Menu: CloseWindow (choose a section that matches your extension)
 // 
-// Create "hello_world@extensions.kmeleonbrowser.org" string preference (in 
-// about:config page) to override default.
-//
+// 
+// Create a "hello_world@extensions.kmeleonbrowser.org" string preference (in 
+// about:config page) to override defaults.
 // Simple KM macros can also change preferences to interact with xpi extensions.
 //
 
 var prefBranch = 'hello_world@extensions.kmeleonbrowser.org.'
 var ToolbarDefault = 'Browser Con&figuration';
+var MenuDefault = 'CloseWindow';
 
 
 var Toolbar = '';
-var CmdName = 'Hello101';
+var CmdName = 'Hello World';
 
 var jsb = null;
 
@@ -81,7 +83,21 @@ function delayed_startup() {
 
   }, 'chrome://helloworld/content/icon.png');
 
-  jsb.AddButton(Toolbar, CmdName, "");
+
+//syntax: addbutton("toolbar", "command-name", "menu", "tooltip");
+// A blank "" results in K-Meleon default. The defaults are:
+// menu: 	"Toolbars >
+//			 [] Status Bar"
+// tooltip: "command-name
+//			 Right-click for more options."
+jsb.AddButton(ToolbarDefault, CmdName, "", "Hello World demo.");
+  
+//syntax setmenu("menu", MENU_TYPE, "item-name", "command-name", <location>);
+// for location: -1 adds the last item on a list, other integers order a list,
+// 				 strings position an item adjacent to another item.
+// Note: all items are not required to build menu entries, but all items are
+//		 all items must be present to display icons.
+jsb.SetMenu(MenuDefault, jsb.MENU_COMMAND, CmdName, CmdName, -1);
 
 };
 

@@ -1,3 +1,7 @@
+# Add files to the manifest to reference them in other code. The line below
+# allows bootstrap.js to access the icon file at:
+# chrome://helloworld/content/icon.png
+# You can also access these urls via the address bar or macros.
 content helloworld chrome/content/
 
 
