@@ -1,4 +1,4 @@
-# Hello-World-XUL-
+# "Hello World" XUL-Based Extension
 This "Hello World" extension for K-Meleon creates a toolbar button and menu item via jsbridge. XUL-based extensions often target applications like Firefox or Pale Moon where the interface is also XUL. K-Meleon uses the native Windows API for its interface. Most K-Meleon extensions use the browser's own custom macro language and configuration files. Jsbridge allows a XUL-based extension to interact with K-Meleon's interface, configurations, and macros. 
 
 Check the comments for notes and documentation. Any xpi file can be extracted and examined. They are .zip archives designed for XUL. To compile a XUL-based extension: zip the root folder and change the extension from .zip to .xpi.
